@@ -37,7 +37,8 @@ async fn main() {
             .repos(repository.0, repository.1)
             .releases()
             .get_latest()
-            .await.unwrap();
+            .await
+            .unwrap();
         latest_releases.push((repository.1, release));
     }
 
