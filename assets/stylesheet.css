@@ -1,0 +1,119 @@
+a {
+	text-decoration: none;
+    color: rgb(255,59,48);
+}
+
+a:hover {
+    text-decoration: none;
+    color: #d70015;
+}
+
+* {
+	cursor: default !important;
+}
+
+*:hover {
+    cursor: default !important;
+}
+
+.btn:hover {
+    cursor: default;
+}
+
+.container {
+	margin-left: 1rem;
+	margin-top: 1rem;
+}
+
+.card-body > * {
+	margin-bottom: 0.5rem;
+	max-width: fit-content;
+}
+
+.card-contents {
+	margin: 1rem;
+}
+
+.card-footer {
+    margin-top: 1rem;
+    min-width: max-content;
+	width: max-content;
+    background: #fff;
+}
+
+.card > * {
+	margin-top: 0.5rem;
+	max-width: fit-content;
+}
+
+.card {
+	min-width: auto;
+	border-radius: 1rem;
+	margin: 0.5rem;
+}
+
+.btn {
+	padding-bottom: 0.333rem;
+}
+
+.btn > span {
+	padding-bottom: 0.25rem;
+}
+
+.repo-buttons {
+	margin-top: 0.5rem;
+	padding-top: 0.1rem;
+	margin-bottom: 0.4rem
+	width: min-content;
+}
+
+.repo-buttons > * {
+	margin: 0.25rem;
+}
+
+body {
+    font:16px/1 "Inter", Helvetica, Arial, sans-serif;
+    color: #666;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    width: 11in;
+    height: 8.5in;
+    margin: auto;
+    background: #fcfcfc;
+		line-height: 2;
+}
+
+h1 {
+    font-size: 30px;
+    letter-spacing: -1px;
+    color: #222;
+    font-weight: bold;
+}
+
+h3 {
+    font: normal 17px/1.5em "Inter",Helvetica,Arial,sans-serif;
+    color: #aaa;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 24px;
+    letter-spacing: -1px;
+    color: #666;
+    font-weight: bold;
+}
+
+p.small {
+    color: #bbb;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.center {
+    text-align: center;
+    margin: auto;
+}
+
+p {
+    line-height: 1.25;
+}
