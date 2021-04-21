@@ -47,7 +47,7 @@ async fn main() {
         write_file(
             format!("./stable/{}.mokkf", release.0),
             format!(
-                "{}collection: \"releases\"\nlayout: main\npermalink: none\ndate: {}\ntitle: {}\n---\n{{% raw %}}\n{}\n{{% endraw %}}",
+                "{}collection: \"releases\"\nlayout: main\npermalink: /{{{{ page.name }}}}.html\ndate: {}\ntitle: {}\n---\n{{% raw %}}\n{}\n{{% endraw %}}",
                 file_contents, release.1.published_at.to_rfc3339(), release.1.name.unwrap(), release.1.body.unwrap().replace("{", "{‎")
             ),
         )
