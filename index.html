@@ -28,12 +28,12 @@
     <a href="https://dirout.github.io/releases/Dokkoo.html">
         <div class="card-body">
             
-            <h5 class="card-title"> Dokkoo 0.3.0</h5>
+            <h5 class="card-title"> Dokkoo 0.3.1</h5>
             
             <div class="card-contents">
-            <h1>Dokkoo 0.3.0</h1>
+            <h1>Dokkoo 0.3.1</h1>
 <blockquote>
-<p>2021-03-16</p>
+<p>2021-06-01</p>
 </blockquote>
 <p align="center">
   <a href="https://github.com/Dirout/dokkoo"><img src="https://github.com/Dirout/dokkoo/raw/master/branding/banner-4320x1440.png" width=480px alt="Logo" title="Dokkoo" style="border-radius: 4px"></a>
@@ -41,49 +41,49 @@
 <p>Dokkoo is a Mokk (Macro Output Key Kit) implementation written in Rust.</p>
 <p>Notes:</p>
 <ul>
-<li>Release finalized at https://github.com/Dirout/dokkoo/commit/a5fc81ee0b4de35bfee30ef05664665fa7b34fad.</li>
-<li>Add 404 functionality to <code>dokkoo-serve</code></li>
-<li>Restructure objects
+<li>Release finalized at https://github.com/Dirout/dokkoo/commit/d147f0dd74aa747f913e4e9c8a226adc3f5a2acd.</li>
+<li>Memory allocation is now handled by <code>mimalloc</code> instead of the system global memory allocator.
 <ul>
-<li><code>{‎{‎ page.document.frontmatter }}</code> → <code>{‎{‎ page.data }}</code></li>
-<li>All date-time related values have been moved from <code>{‎{‎ page.document.date }}</code> and <code>{‎{‎ page }}</code> to a <code>{‎{‎ page.date }}</code> structure</li>
+<li>The new memory allocator should outperform most OS-provided allocators (which Dokkoo formerly used by default). This should increase binary size, and may lead to unexpected memory-related issues on certain platforms; however, I don’t expect this to be much of a problem (if it is, it is treatable), and the performance increase is favourable.</li>
 </ul>
 </li>
-<li>Add <code>markdown</code> entry to Mokk specification
+<li>Windows version of Dokkoo now uses GNU ABI.
 <ul>
-<li>Markdown rendering is on by default</li>
+<li>This should increase performance by no longer using the slower Microsoft Visual C ABI.</li>
 </ul>
 </li>
-<li>Remove <code>{‎! snippet !}</code> tag, replace with Liquid-conformant, more performant alternative
+<li>Corrected <code>pretty</code> permalink style.
 <ul>
-<li>Snippets are cached before building, called via <code>{‎% include %}</code> tag</li>
+<li><code>pretty</code> is no longer a synonym for <code>date</code>—<code>/{‎{‎ page.data.collection }}/{‎{‎ page.date.year }}/{‎{‎ page.date.month }}/{‎{‎ page.date.day }}/{‎{‎ page.data.title }}/index.html</code>.</li>
 </ul>
 </li>
+<li>Updated Actix dependencies, switched to Rust 2021 edition.</li>
+<li>Tomorrow is my eighteenth birthday; this is my last Dokkoo release as a child.</li>
 </ul>
 
             </div>
             </a>
-            <div class="repo-buttons"><button type="button" class="btn" onclick="window.location.href='https://github.com/Dirout/dokkoo/releases/download/v0.3.0/aarch64-dokkoo.gnu%2Blinux.tar'">
-                <span data-octicon="download"></span>aarch64-dokkoo.gnu+linux.tar <span class="badge bg-secondary">1</span>
-                </button><button type="button" class="btn" onclick="window.location.href='https://github.com/Dirout/dokkoo/releases/download/v0.3.0/aarch64-dokkoo.osx.tar'">
-                <span data-octicon="download"></span>aarch64-dokkoo.osx.tar <span class="badge bg-secondary">1</span>
-                </button><button type="button" class="btn" onclick="window.location.href='https://github.com/Dirout/dokkoo/releases/download/v0.3.0/dokkoo-0.3.0-1.fc33.x86_64.rpm'">
-                <span data-octicon="download"></span>dokkoo-0.3.0-1.fc33.x86_64.rpm <span class="badge bg-secondary">3</span>
-                </button><button type="button" class="btn" onclick="window.location.href='https://github.com/Dirout/dokkoo/releases/download/v0.3.0/dokkoo-0.3.0-x86_64.tar.gz'">
-                <span data-octicon="download"></span>dokkoo-0.3.0-x86_64.tar.gz <span class="badge bg-secondary">1</span>
-                </button><button type="button" class="btn" onclick="window.location.href='https://github.com/Dirout/dokkoo/releases/download/v0.3.0/dokkoo_0.3.0_amd64.deb'">
-                <span data-octicon="download"></span>dokkoo_0.3.0_amd64.deb <span class="badge bg-secondary">119</span>
-                </button><button type="button" class="btn" onclick="window.location.href='https://github.com/Dirout/dokkoo/releases/download/v0.3.0/x86_64-dokkoo.gnu%2Blinux.tar'">
-                <span data-octicon="download"></span>x86_64-dokkoo.gnu+linux.tar <span class="badge bg-secondary">2</span>
-                </button><button type="button" class="btn" onclick="window.location.href='https://github.com/Dirout/dokkoo/releases/download/v0.3.0/x86_64-dokkoo.osx.tar'">
-                <span data-octicon="download"></span>x86_64-dokkoo.osx.tar <span class="badge bg-secondary">1</span>
-                </button><button type="button" class="btn" onclick="window.location.href='https://github.com/Dirout/dokkoo/releases/download/v0.3.0/x86_64-dokkoo.win32.zip'">
-                <span data-octicon="download"></span>x86_64-dokkoo.win32.zip <span class="badge bg-secondary">1</span>
+            <div class="repo-buttons"><button type="button" class="btn" onclick="window.location.href='https://github.com/Dirout/dokkoo/releases/download/v0.3.1/aarch64-dokkoo.gnu%2Blinux.tar'">
+                <span data-octicon="download"></span>aarch64-dokkoo.gnu+linux.tar <span class="badge bg-secondary">0</span>
+                </button><button type="button" class="btn" onclick="window.location.href='https://github.com/Dirout/dokkoo/releases/download/v0.3.1/aarch64-dokkoo.osx.tar'">
+                <span data-octicon="download"></span>aarch64-dokkoo.osx.tar <span class="badge bg-secondary">0</span>
+                </button><button type="button" class="btn" onclick="window.location.href='https://github.com/Dirout/dokkoo/releases/download/v0.3.1/dokkoo-0.3.0-x86_64.tar.gz'">
+                <span data-octicon="download"></span>dokkoo-0.3.0-x86_64.tar.gz <span class="badge bg-secondary">0</span>
+                </button><button type="button" class="btn" onclick="window.location.href='https://github.com/Dirout/dokkoo/releases/download/v0.3.1/dokkoo-0.3.1-1.fc34.x86_64.rpm'">
+                <span data-octicon="download"></span>dokkoo-0.3.1-1.fc34.x86_64.rpm <span class="badge bg-secondary">0</span>
+                </button><button type="button" class="btn" onclick="window.location.href='https://github.com/Dirout/dokkoo/releases/download/v0.3.1/dokkoo_0.3.1_amd64.deb'">
+                <span data-octicon="download"></span>dokkoo_0.3.1_amd64.deb <span class="badge bg-secondary">7</span>
+                </button><button type="button" class="btn" onclick="window.location.href='https://github.com/Dirout/dokkoo/releases/download/v0.3.1/x86_64-dokkoo.gnu%2Blinux.tar'">
+                <span data-octicon="download"></span>x86_64-dokkoo.gnu+linux.tar <span class="badge bg-secondary">0</span>
+                </button><button type="button" class="btn" onclick="window.location.href='https://github.com/Dirout/dokkoo/releases/download/v0.3.1/x86_64-dokkoo.osx.tar'">
+                <span data-octicon="download"></span>x86_64-dokkoo.osx.tar <span class="badge bg-secondary">0</span>
+                </button><button type="button" class="btn" onclick="window.location.href='https://github.com/Dirout/dokkoo/releases/download/v0.3.1/x86_64-dokkoo.win32.zip'">
+                <span data-octicon="download"></span>x86_64-dokkoo.win32.zip <span class="badge bg-secondary">0</span>
                 </button></div>
             <div class="card-footer">
                 <p class="card-text">
                 <small class="text-muted">
-                <span data-octicon="clock"></span> Last updated on Wed, 17 Mar 2021 01:49:15 +0000
+                <span data-octicon="clock"></span> Last updated on Tue, 01 Jun 2021 04:44:11 +0000
                 </small>
                 </p>
             </div>

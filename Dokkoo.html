@@ -21,12 +21,12 @@
 <meta name="msapplication-TileImage" content="https://dirout.github.io/assets/icons/mstile-144x144.png">
 <meta name="msapplication-config" content="https://dirout.github.io/assets/icons/browserconfig.xml">
 <meta name="theme-color" content="#ffffff">
-    <title>Dokkoo 0.3.0</title>
+    <title>Dokkoo 0.3.1</title>
   </head>
   <body>
-<h1>Dokkoo 0.3.0</h1>
+<h1>Dokkoo 0.3.1</h1>
 <blockquote>
-<p>2021-03-16</p>
+<p>2021-06-01</p>
 </blockquote>
 <p align="center">
   <a href="https://github.com/Dirout/dokkoo"><img src="https://github.com/Dirout/dokkoo/raw/master/branding/banner-4320x1440.png" width=480px alt="Logo" title="Dokkoo" style="border-radius: 4px"></a>
@@ -34,24 +34,24 @@
 <p>Dokkoo is a Mokk (Macro Output Key Kit) implementation written in Rust.</p>
 <p>Notes:</p>
 <ul>
-<li>Release finalized at https://github.com/Dirout/dokkoo/commit/a5fc81ee0b4de35bfee30ef05664665fa7b34fad.</li>
-<li>Add 404 functionality to <code>dokkoo-serve</code></li>
-<li>Restructure objects
+<li>Release finalized at https://github.com/Dirout/dokkoo/commit/d147f0dd74aa747f913e4e9c8a226adc3f5a2acd.</li>
+<li>Memory allocation is now handled by <code>mimalloc</code> instead of the system global memory allocator.
 <ul>
-<li><code>{‎{‎ page.document.frontmatter }}</code> → <code>{‎{‎ page.data }}</code></li>
-<li>All date-time related values have been moved from <code>{‎{‎ page.document.date }}</code> and <code>{‎{‎ page }}</code> to a <code>{‎{‎ page.date }}</code> structure</li>
+<li>The new memory allocator should outperform most OS-provided allocators (which Dokkoo formerly used by default). This should increase binary size, and may lead to unexpected memory-related issues on certain platforms; however, I don’t expect this to be much of a problem (if it is, it is treatable), and the performance increase is favourable.</li>
 </ul>
 </li>
-<li>Add <code>markdown</code> entry to Mokk specification
+<li>Windows version of Dokkoo now uses GNU ABI.
 <ul>
-<li>Markdown rendering is on by default</li>
+<li>This should increase performance by no longer using the slower Microsoft Visual C ABI.</li>
 </ul>
 </li>
-<li>Remove <code>{‎! snippet !}</code> tag, replace with Liquid-conformant, more performant alternative
+<li>Corrected <code>pretty</code> permalink style.
 <ul>
-<li>Snippets are cached before building, called via <code>{‎% include %}</code> tag</li>
+<li><code>pretty</code> is no longer a synonym for <code>date</code>—<code>/{‎{‎ page.data.collection }}/{‎{‎ page.date.year }}/{‎{‎ page.date.month }}/{‎{‎ page.date.day }}/{‎{‎ page.data.title }}/index.html</code>.</li>
 </ul>
 </li>
+<li>Updated Actix dependencies, switched to Rust 2021 edition.</li>
+<li>Tomorrow is my eighteenth birthday; this is my last Dokkoo release as a child.</li>
 </ul>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
