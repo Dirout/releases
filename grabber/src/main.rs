@@ -30,7 +30,7 @@ async fn main() {
         }
     }
 
-    let repositories = [("Dirout", "Dokkoo")];
+    let repositories = [("Dirout", "Dokkoo"), ("Dirout", "larz")];
     let mut latest_releases = vec![];
     for repository in repositories.iter() {
         let release = octocrab
